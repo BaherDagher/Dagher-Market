@@ -1,0 +1,153 @@
+/* Full viewport container for loader */
+.loaderContainer {
+    position: fixed; /* Fixes the loader in the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Ensure background is white */
+    z-index: 9999; /* Ensure loader is on top of other content */
+  }
+
+/* Ensure styles are scoped only to the loader component */
+.preloader {
+    text-align: center;
+    max-width: 20em;
+    width: 100%;
+    /* Center the loader */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Full viewport height */
+    height: 100vh;
+}
+
+.preloader__text {
+    position: relative;
+    height: 1.5em;
+}
+
+.preloader__msg {
+    animation: msg 0.3s 13.7s linear forwards;
+    position: absolute;
+    width: 100%;
+}
+
+.preloader__msg--last {
+    animation-direction: reverse;
+    animation-delay: 14s;
+    visibility: hidden;
+}
+
+.cart {
+    display: block;
+    margin: 0 auto 1.5em auto;
+    width: 8em;
+    height: 8em;
+}
+
+.cart__lines,
+.cart__top,
+.cart__wheel1,
+.cart__wheel2,
+.cart__wheelStroke {
+    animation: cartLines 2s ease-in-out infinite;
+}
+
+.cart__lines {
+    stroke: green; /* Ensure cart lines are green */
+}
+
+.cart__top {
+    animation-name: cartTop;
+}
+
+.cart__wheel1 {
+    animation-name: cartWheel1;
+    transform: rotate(-0.25turn);
+    transform-origin: 43px 111px;
+}
+
+.cart__wheel2 {
+    animation-name: cartWheel2;
+    transform: rotate(0.25turn);
+    transform-origin: 102px 111px;
+}
+
+.cart__wheelStroke {
+    animation-name: cartWheelStroke;
+}
+
+.cart__track {
+    stroke: hsla(223, 10%, 10%, 0.1); /* Use a specific color */
+    transition: stroke 0.3s;
+}
+
+@keyframes msg {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    99.9% {
+        opacity: 0;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes cartLines {
+    from,
+    to {
+        opacity: 0;
+    }
+    8%,
+    92% {
+        opacity: 1;
+    }
+}
+
+@keyframes cartTop {
+    from {
+        stroke-dashoffset: -338;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 338;
+    }
+}
+
+@keyframes cartWheel1 {
+    from {
+        transform: rotate(-0.25turn);
+    }
+    to {
+        transform: rotate(2.75turn);
+    }
+}
+
+@keyframes cartWheel2 {
+    from {
+        transform: rotate(0.25turn);
+    }
+    to {
+        transform: rotate(3.25turn);
+    }
+}
+
+@keyframes cartWheelStroke {
+    from,
+    to {
+        stroke-dashoffset: 81.68;
+    }
+    50% {
+        stroke-dashoffset: 40.84;
+    }
+}

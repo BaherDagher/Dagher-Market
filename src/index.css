@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    padding-top: 4.5rem;
+    box-sizing: border-box;
+}
+
+
+.active {
+    @apply text-green-500 underline
+}
+
+.btn{
+@apply px-4 py-2 rounded
+}
+
+.btn[disabled]{
+    @apply opacity-40
+}
+
+.btn-green{
+    @apply text-white bg-green-500 hover:bg-green-700
+}
+
+.alert{
+    @apply text-white bg-red-500 p-2 text-center
+}
+
+.row {
+    @apply flex flex-wrap -mx-4
+}
+
+.custom-product{
+     &:hover{
+      @apply  border-green-500 border-solid border-2
+    }
+}
+
