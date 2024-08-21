@@ -1,6 +1,6 @@
 
 import './App.css'
-import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
 import Products from './components/Products/Products'
@@ -31,7 +31,7 @@ import SpecificBrandProducts from './components/SpecificBrandProducts/SpecificBr
 
 function App() {
 
-  const router = createHashRouter([
+  const router = createBrowserRouter([
     {
       path: "",
       element: <Layout />,

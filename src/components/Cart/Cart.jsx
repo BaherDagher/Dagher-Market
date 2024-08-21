@@ -123,8 +123,9 @@ else {
                 (
                   cartDetails && (
                     <div className="row ">
-                      <div className="lg:w-4/6  w-full mx-auto px-10 lg:px-0">
-                        <div className='lg:rounded-xl overflow-hidden rounded-md   lg:shadow-[0px_2px_15px_rgba(0,0,0,0.1)]' >
+                      <div className="lg:w-4/6  w-full mx-auto px-10 lg:px-0 flex flex-col">
+                      
+                        <div className='lg:rounded-xl overflow-hidden rounded-md order-2 lg:order-1 lg:shadow-[0px_2px_15px_rgba(0,0,0,0.1)]' >
                           <table className="  relative overflow-x-auto shadow-[0px_2px_15px_rgba(0,0,0,0.1)] sm:rounded-xl  w-full text-sm text-left rtl:text-right text-green-500 dark:text-green-400 ">
                             <thead className=" lg:text-xs text-white  uppercase bg-green-600 dark:bg-gray-700 dark:text-gray-400 rounded-xl">
                               <tr className='rounded-xl text-xs lg:text-sm '>
@@ -192,10 +193,12 @@ else {
                             </tbody>
                           </table>
                         </div>
-                       
+                        <div className='flex justify-center items-center w-52 mx-auto  mb-3 lg:md-0 mt-6 order-1 lg:order-2'>
+                          <button onClick={()=>clearCartProducts()} className='bg-green-600 hover:bg-green-500 font-semibold rounded-3xl w-full py-4 text-white text-sm lg:text-lg w-[150px]'>Clear Cart</button>
+                        </div>
 
                       </div>
-                      <div className=" lg:w-2/6 lg:ps-20  mx-auto lg:mt-0 mt-4 ps-0 w-80">
+                      <div className=" lg:w-2/6 lg:ps-20  mx-auto lg:mt-0 mt-4 ps-0 w-80 ">
                         <div className="inner shadow-[0px_2px_15px_rgba(0,0,0,0.1)]  rounded-xl py-6 lg:px-8  px-10">
                           <div >
                             <h1 className='font-bold text-xl pb-3'>Order Summary</h1>
@@ -212,9 +215,7 @@ else {
                             </div>
                           </div>
                         </div>
-                        <div className='flex justify-center items-center w-full  mt-6'>
-                          <button onClick={()=>clearCartProducts()} className='bg-green-600 hover:bg-green-500 font-semibold rounded-3xl w-full py-4 text-white text-sm lg:text-lg w-[150px]'>Clear Cart</button>
-                        </div>
+                       
                       </div>
 
                     </div>

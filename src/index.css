@@ -29,7 +29,7 @@ body{
 }
 
 .row {
-    @apply flex flex-wrap -mx-4
+    @apply flex flex-wrap 
 }
 
 .custom-product{
