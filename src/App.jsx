@@ -124,6 +124,14 @@ function App() {
           element: <Home />
         },
         {
+          path: "/Dagher-Market/",
+          element: <Home />
+        },
+        {
+          path: "/Dagher-Market",
+          element: <Home />
+        },
+        {
           path: "/forget-password",
           element: <ForgetPassword />
         },
