@@ -120,6 +120,10 @@ function App() {
           element: <Home />
         },
         {
+          path: "/",
+          element: <Home />
+        },
+        {
           path: "/forget-password",
           element: <ForgetPassword />
         },
