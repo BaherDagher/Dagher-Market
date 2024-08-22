@@ -53,7 +53,7 @@ export default function Checkout() {
     
     if (res?.status === "success") {
 
-      if (isOnline) {git 
+      if (isOnline) {
         console.log("URL");
         window.location.href = res.session.url;
 
@@ -76,12 +76,7 @@ export default function Checkout() {
   
   
       }
-    // else {
 
-    // }
-    // finally {
-    //   setisLoading(false)
-    // }
   }
 
   useEffect(()=>{
