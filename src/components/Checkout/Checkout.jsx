@@ -45,7 +45,7 @@ export default function Checkout() {
     setisLoading(true);
 
     const url =
-      isOnline ? `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://baherdagher.github.io/Dagher-Market/`
+      isOnline ? `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://baherdagher.github.io/Dagher-Market`
         : `https://ecommerce.routemisr.com/api/v1/orders/${cartId}`
 
 
@@ -53,7 +53,7 @@ export default function Checkout() {
     
     if (res?.status === "success") {
 
-      if (isOnline) {
+      if (isOnline) {git 
         console.log("URL");
         window.location.href = res.session.url;
 
