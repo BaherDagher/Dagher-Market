@@ -165,12 +165,11 @@ function App() {
           element: <NotFound />
         }
       ]
-      
-    },
-    {
-      basename: "/Dagher-Market/", // Add this line to set the base path
     }
-  ]
+  ],
+  {
+    basename: "/Dagher-Market/", // Add this line to set the base path
+  }
   );
 
   return (
