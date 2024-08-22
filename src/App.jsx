@@ -85,6 +85,15 @@ function App() {
             )
         },
         {
+          path: "//allorders",
+          element:
+            (
+              <ProtectedRoute>
+                <MyOrders />
+              </ProtectedRoute>
+            )
+        },
+        {
           path: "/brands",
           element:
             (
@@ -167,9 +176,9 @@ function App() {
       ]
     }
   ],
-  // {
-  //   basename: "/Dagher-Market", 
-  // }
+  {
+    basename: "/Dagher-Market", 
+  }
   );
 
   return (
