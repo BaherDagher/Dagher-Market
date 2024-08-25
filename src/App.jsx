@@ -85,15 +85,6 @@ function App() {
             )
         },
         {
-          path: "allorders",
-          element:
-            (
-              <ProtectedRoute>
-                <MyOrders />
-              </ProtectedRoute>
-            )
-        },
-        {
           path: "brands",
           element:
             (

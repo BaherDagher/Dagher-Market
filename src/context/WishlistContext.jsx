@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState,useEffect } from "react";
 export const WishlistContext = createContext([])
 import { AuthContext } from "./AuthContext";
 
@@ -14,6 +14,15 @@ export default function WishlistContextProvider({ children }) {
     const headers = {
         token: accessToken
     }
+
+
+
+    useEffect(() => {
+        // Fetch the wishlist data on component mount
+        if (accessToken) {
+          getWishlist();
+        }
+      }, [accessToken]); // Only run this effect if the access token changes
 
 
 
@@ -59,6 +68,7 @@ export default function WishlistContextProvider({ children }) {
             return (error)
         }
     }
+
 
     return <WishlistContext.Provider value={{ addToWishlist, wishlistProducts, getWishlist, removeFromWishlist, setwishlistProducts, numOfWishlistItems, setNumOfWishlistItems }}>
         {children}

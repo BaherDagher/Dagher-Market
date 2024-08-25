@@ -16,13 +16,13 @@ export default function RecentProducts() {
       const { data } = await axios.get('https://ecommerce.routemisr.com/api/v1/products');
       setProducts(data.data);
       setError(null);
-      
+
 
     } catch (error) {
       console.log(error);
       setError(error.response.data.message);
       setProducts([]);
-    } finally{
+    } finally {
       setisLoading(false);
     }
   }
@@ -36,22 +36,22 @@ export default function RecentProducts() {
         <div className='container mx-auto px-8 md:px-0'>
           <div>
             <h1 className='text-3xl font-bold mb-4' >Recent Products</h1>
-            </div>
+          </div>
           {
-           isLoading? (<Loader />) :
-          error ?
-            (<div className='alert'>{error}</div>
-            ) :
-            (
-              <div className="row ">
-                {
-                  
-                  products.splice(0,20).map((product) => 
-              <Product product={product}  key={product.id}  />
-                  )
-                }
-              </div>
-            )
+            isLoading ? (<Loader />) :
+              error ?
+                (<div className='alert'>{error}</div>
+                ) :
+                (
+                  <div className="row ">
+                    {
+
+                      products.splice(0, 20).map((product) =>
+                        <Product product={product} key={product.id} />
+                      )
+                    }
+                  </div>
+                )
           }
 
         </div>
