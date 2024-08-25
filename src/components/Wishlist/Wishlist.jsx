@@ -23,7 +23,7 @@ export default function Wishlist() {
     try {
       const allWishListProducts = await getWishlist();
       console.log(allWishListProducts);
-      // setwishlistProducts(allWishListProducts)
+      setwishlistProducts(allWishListProducts)
       if (allWishListProducts.status === "success" &&(allWishListProducts.count > 0 ) ) {
         setError(null);
       } else {
@@ -33,6 +33,8 @@ export default function Wishlist() {
     }
     finally {
       setisLoading(false); // Ensure loader is turned off after the data is fetched
+      console.log(wishlistProducts);
+      
     }
   }
 
@@ -89,7 +91,7 @@ export default function Wishlist() {
 
   useEffect(() => {
     accessToken && getWishlistDetails()
-  }, [accessToken])
+  }, [accessToken,wishlistProducts])
 
   return (
     <>
