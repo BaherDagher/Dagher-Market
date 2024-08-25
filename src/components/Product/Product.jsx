@@ -11,7 +11,7 @@ export default function Product({ product }) {
 
   // const [isInWishlist, setIsInWishlist] = useState(false)
   const { addToCart } = useContext(CartContext);
-  const { addToWishlist, wishlistProducts, removeFromWishlist } = useContext(WishlistContext);
+  const { addToWishlist, wishlistProducts= [], removeFromWishlist , getWishlist } = useContext(WishlistContext);
   const navigate = useNavigate();
 
   async function addProductToCart(productId) {
@@ -89,6 +89,12 @@ export default function Product({ product }) {
     }
   }
 
+
+
+  useEffect(() => {
+    // Fetch wishlist again when component mounts
+    getWishlist();
+  }, [getWishlist]); 
 
 
   const isInWishlist = (productId) => wishlistProducts?.some(item => item.id === productId);
