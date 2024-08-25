@@ -31,7 +31,7 @@ import SpecificBrandProducts from './components/SpecificBrandProducts/SpecificBr
 
 function App() {
 
-  const router = createHashRouter([
+  const router = createBrowserRouter([
     {
       path: "",
       element: <Layout />,
