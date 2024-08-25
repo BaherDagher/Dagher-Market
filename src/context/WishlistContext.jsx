@@ -60,8 +60,7 @@ export default function WishlistContextProvider({ children }) {
             const { data } = await axios.get(endpoint, { headers });
             
             if (data.status === "success") {
-                console.log(data.data);
-                
+                                        
                 setwishlistProducts(data.data)
                 setNumOfWishlistItems(data.data.length);
             }

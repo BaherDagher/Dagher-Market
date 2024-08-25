@@ -32,9 +32,7 @@ export default function Wishlist() {
       }
     }
     finally {
-      setisLoading(false); // Ensure loader is turned off after the data is fetched
-      console.log(wishlistProducts);
-      
+      setisLoading(false); // Ensure loader is turned off after the data is fetched      
     }
   }
 

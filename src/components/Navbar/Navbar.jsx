@@ -12,6 +12,7 @@ import { WishlistContext } from '../../context/WishlistContext';
 
 
 export default function Navbar() {
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { accessToken, setAccessToken } = useContext(AuthContext)
   const { numOfWishlistItems, setNumOfWishlistItems } = useContext(WishlistContext)

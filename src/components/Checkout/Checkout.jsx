@@ -43,9 +43,10 @@ export default function Checkout() {
 
   async function handleCheckout(values) {
     setisLoading(true);
+    const baseUrl = "https://baherdagher.github.io/Dagher-Market";
 
     const url =
-      isOnline ? `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=https://baherdagher.github.io/Dagher-Market`
+      isOnline ? `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${encodeURIComponent(baseUrl)}`
         : `https://ecommerce.routemisr.com/api/v1/orders/${cartId}`
 
 
