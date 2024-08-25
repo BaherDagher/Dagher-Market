@@ -130,6 +130,7 @@ export default function Wishlist() {
                             </thead>
                             <tbody>
                               {
+                                 Array.isArray(wishlistProducts) && wishlistProducts.length > 0 ? (
                                 wishlistProducts?.map((product) => (
                                   <tr key={product.id}>
                                     <td>
@@ -152,6 +153,13 @@ export default function Wishlist() {
                                     </td>
                                   </tr>
                                 ))
+                              ):
+                              (
+                                <tr>
+                                  <td colSpan="5" className="text-center py-4">No items in wishlist.</td>
+                                </tr>
+                              )
+                              
                               }
                             </tbody>
                           </table>
