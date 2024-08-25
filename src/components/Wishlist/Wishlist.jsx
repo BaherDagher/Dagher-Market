@@ -22,7 +22,7 @@ export default function Wishlist() {
     setisLoading(true); // Ensure loader is turned off after the data is fetched
     try {
       const allWishListProducts = await getWishlist();
-      console.log(allWishListProducts);
+      // console.log(allWishListProducts);
       setwishlistProducts(allWishListProducts)
       if (allWishListProducts.status === "success" &&(allWishListProducts.count > 0 ) ) {
         setError(null);
@@ -91,7 +91,7 @@ export default function Wishlist() {
 
   useEffect(() => {
     accessToken && getWishlistDetails()
-  }, [accessToken,wishlistProducts])
+  }, [accessToken])
 
   return (
     <>
