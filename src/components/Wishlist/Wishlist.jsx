@@ -23,7 +23,7 @@ export default function Wishlist() {
     try {
       const allWishListProducts = await getWishlist();
       console.log(allWishListProducts);
-      setwishlistProducts(allWishListProducts)
+      // setwishlistProducts(allWishListProducts)
       if (allWishListProducts.status === "success" &&(allWishListProducts.count > 0 ) ) {
         setError(null);
       } else {
