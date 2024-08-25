@@ -130,7 +130,7 @@ export default function Wishlist() {
                             </thead>
                             <tbody>
                               {
-                                wishlistProducts?.data?.map((product) => (
+                                wishlistProducts?.map((product) => (
                                   <tr key={product.id}>
                                     <td>
                                       <img src={product.imageCover} className="w-16 lg:w-32 max-w-full max-h-full mx-auto" alt={product.title} />
