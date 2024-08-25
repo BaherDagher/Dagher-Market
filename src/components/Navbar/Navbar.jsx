@@ -13,14 +13,12 @@ import { WishlistContext } from '../../context/WishlistContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const { accessToken } = useContext(AuthContext)
-const {numOfWishlistItems , setNumOfWishlistItems} = useContext(WishlistContext)
+  const { accessToken, setAccessToken } = useContext(AuthContext)
+  const { numOfWishlistItems, setNumOfWishlistItems } = useContext(WishlistContext)
   const { numOfCartItems } = useContext(CartContext)
 
   function handleLogout() {
     localStorage.removeItem("accessToken");
-    const { accessToken, setAccessToken } = useContext(AuthContext);
     setAccessToken(null);
     setIsMenuOpen(false); // Close menu on logout
 
@@ -28,7 +26,8 @@ const {numOfWishlistItems , setNumOfWishlistItems} = useContext(WishlistContext)
 
   useEffect(() => {
     initFlowbite();
-  }, [])
+  }, [accessToken])
+
   return (
     <div className="container mx-auto ">
       <nav className="bg-white border-gray-200 dark:bg-gray-900 left-0 right-0 top-0 fixed z-50 px-[50px]">
@@ -42,14 +41,14 @@ const {numOfWishlistItems , setNumOfWishlistItems} = useContext(WishlistContext)
             </Link>
 
           </div>
-          <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded={isMenuOpen ? "true" : "false"}             onClick={() => setIsMenuOpen(!isMenuOpen)}
->
+          <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded={isMenuOpen ? "true" : "false"} onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             <span className="sr-only">Open main menu</span>
             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
-          <div className={` ${isMenuOpen ? " q" : "hidden"}  w-5/6 lg:flex  mx-auto  flex-wrap flex-row py-1 ` } id="navbar-default">
+          <div className={` ${isMenuOpen ? " q" : "hidden"}  w-5/6 lg:flex  mx-auto  flex-wrap flex-row py-1 `} id="navbar-default">
             {<div className='text-center '>
               <ul className='flex flex-col lg:flex-row '>
                 <li className='my-3 lg:my-0'>
@@ -69,12 +68,12 @@ const {numOfWishlistItems , setNumOfWishlistItems} = useContext(WishlistContext)
                   <>
                     <li className='my-3 lg:my-0'>
                       <NavLink className="p-2" to={"/wishlist"} onClick={() => setIsMenuOpen(false)}>
-                      <button type="button" className="relative inline-flex  items-center text-sm font-medium text-center text-black rounded-lg ">
+                        <button type="button" className="relative inline-flex  items-center text-sm font-medium text-center text-black rounded-lg ">
                           <i className="fa-solid fa-heart text-3xl "></i>
                           <span className="sr-only">Notifications</span>
                           <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">{numOfWishlistItems}</div>
                         </button>
-                      
+
                       </NavLink>
                     </li>
                     <li className='my-3 lg:my-0'>
