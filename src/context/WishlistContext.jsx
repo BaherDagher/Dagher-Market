@@ -58,6 +58,8 @@ export default function WishlistContextProvider({ children }) {
     async function getWishlist() {
         try {
             const { data } = await axios.get(endpoint, { headers });
+            console.log(data);
+            
             if (data.status === "success") {
                 setwishlistProducts(data.data)
                 setNumOfWishlistItems(data.data.length);

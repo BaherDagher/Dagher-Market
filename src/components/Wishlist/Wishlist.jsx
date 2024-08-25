@@ -130,7 +130,7 @@ export default function Wishlist() {
                             </thead>
                             <tbody>
                               {
-                                 Array.isArray(wishlistProducts) && wishlistProducts.length > 0 ? (
+                                wishlistProducts.length > 0 ? (
                                 wishlistProducts?.map((product) => (
                                   <tr key={product.id}>
                                     <td>
