@@ -1,6 +1,6 @@
 
 import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
 import Products from './components/Products/Products'
@@ -31,7 +31,7 @@ import SpecificBrandProducts from './components/SpecificBrandProducts/SpecificBr
 
 function App() {
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "",
       element: <Layout />,
@@ -42,7 +42,7 @@ function App() {
           element: <Home />
         },
         {
-          path: "/checkout",
+          path: "checkout",
           element:
             (
               <ProtectedRoute>
@@ -51,14 +51,14 @@ function App() {
             )
         },
         {
-          path: "/products",
+          path: "products",
           element:
             (
                 <Products />
             )
         },
         {
-          path: "/cart",
+          path: "cart",
           element:
             (
               <ProtectedRoute>
@@ -67,7 +67,7 @@ function App() {
             )
         },
         {
-          path: "/wishlist",
+          path: "wishlist",
           element:
             (
               <ProtectedRoute>
@@ -76,7 +76,7 @@ function App() {
             )
         },
         {
-          path: "/allorders",
+          path: "allorders",
           element:
             (
               <ProtectedRoute>
@@ -85,7 +85,7 @@ function App() {
             )
         },
         {
-          path: "//allorders",
+          path: "allorders",
           element:
             (
               <ProtectedRoute>
@@ -94,21 +94,21 @@ function App() {
             )
         },
         {
-          path: "/brands",
+          path: "brands",
           element:
             (
                 <Brands />
             )
         },
         {
-          path: "/categories",
+          path: "categories",
           element:
             (
                 <Categories />
             )
         },
         {
-          path: "/product-details/:id/:category",
+          path: "product-details/:id/:category",
           element:
             (
 
@@ -117,15 +117,15 @@ function App() {
             )
         },
         {
-          path: "/register",
+          path: "register",
           element: <Register />
         },
         {
-          path: "/login",
+          path: "login",
           element: <Login />
         },
         {
-          path: "/home",
+          path: "home",
           element: <Home />
         },
         {
@@ -141,18 +141,18 @@ function App() {
         //   element: <Home />
         // },
         {
-          path: "/forget-password",
+          path: "forget-password",
           element: <ForgetPassword />
         },
         {
-          path: "/verify-code",
+          path: "verify-code",
           element:
             <VerifyProtectedRoute>
               <VerifyCode />
             </VerifyProtectedRoute>
         },
         {
-          path: "/password-reset",
+          path: "password-reset",
           element:
             <ResetProtectedRoute>
               <PasswordReset />
@@ -160,12 +160,12 @@ function App() {
             </ResetProtectedRoute>
         },
         {
-          path: "/specific-categoury-products/:category",
+          path: "specific-categoury-products/:category",
           element:
               <SpecificCategoryProducts />
         },
         {
-          path: "/specific-brand-products/:brand",
+          path: "specific-brand-products/:brand",
           element:
               <SpecificBrandProducts />
         },
@@ -176,9 +176,9 @@ function App() {
       ]
     }
   ],
-  {
-    basename: "/Dagher-Market", 
-  }
+  // {
+  //   basename: "/Dagher-Market", 
+  // }
   );
   
 
