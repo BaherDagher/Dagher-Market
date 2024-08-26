@@ -94,7 +94,7 @@ export default function Product({ product }) {
   useEffect(() => {
     // Fetch wishlist again when component mounts
     getWishlist();
-  }, [getWishlist]); 
+  }, []); 
 
 
   const isInWishlist = (productId) => wishlistProducts?.some(item => item.id === productId);
