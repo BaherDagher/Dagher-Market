@@ -2,7 +2,7 @@
   "name": "commerce",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://baherdagher.github.io/Dagher-Market",
+  "homepage": "https://dagher-market.vercel.app",
   "type": "module",
   "scripts": {
     "dev": "vite",
